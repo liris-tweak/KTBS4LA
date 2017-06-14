@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset=utf-8 />
+  	<title></title>
+  	<link rel="stylesheet" type="text/css" media="screen" href="../css/master.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <h1> KTBS FOR LA </h1>
+    <h2> Sommaire </h2>
+    <ol>
+      <li>
+        <a class="clickable hoverable" href="#trace-exloration">Exploration de traces</a>
+        <ul>
+          <li>
+            <a class="clickable hoverable" href="#trace-exloration">Page d'accueil</a>
+          </li>
+          <li>
+            <a class="clickable hoverable" href="#histogram">Histogramme</a>
+          </li>
+          <li>
+            <a class="clickable hoverable" href="#spare">Spare</a>
+          </li>
+          <li>
+            <a class="clickable hoverable" href="#timeline">Timeline</a>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="trace-exloration"> Exploration de traces </h2>
+
+    <h3> Page d'accueil </h3>
+
+    <p>
+      Les outils d'<b>exploration de trace</b> permettent de visualiser, sous différents angles, une trace présente sur un kTBS.
+      La page d'accueil de ces outils donne des informations générales sur une trace, comme la répartition des obsels par type, la durée de la trace, etc.
+      <figure>
+        <img class="max-width"
+        src="../images/trace-exploration.png"
+        alt="Capture d'écran de la page d'accueil des outils d'exploration de trace."></img>
+      <figcaption>Capture d'écran de la page d'accueil des outils d'exploration de trace.</figcaption>
+    </figure>
+    </p>
+
+    <h3 id="histogram"> Histogramme </h3>
+
+    <p>
+      L'outil histogramme permet d'observer la répartition temporelle des obsels, groupés selon une valeur d'attribut ou un type d'obsel. Par exemple, sur une trace concernant la participation à une activité d'apprenants de différents groupes, on va pouvoir observer le nombres d'évenements tracé pour chaque groupe chaques jours/semaines/mois...
+    </p>
+    <p>
+      Pour utiliser l'outil histogramme, vous devez choisir un attribut/type d'obsel pour grouper les obsels (<i>selecteur de gauche</i>). Ensuite, avec le selecteur suivant, vous devez choisir l'interval temporel de l'histogramme (<i>jour</i>, <i>semaine</i>, etc). Une fois els intervals et gorupes choisi, il vous reste à choisir d'<i>appliquer</i> vos choix pour lancer une requête au kTBS.
+    </p>
+    <p>
+      Une fois l'histogramme chargé, vous pouvez visualiser le nombre d'obsels de chaque groupe en survolant les barres. En <i>cliquant</i> sur une barre de l'histogramme, ce dernier chargera un nouvel histogramme borné par l'interval sélectionné, et séparé par un interval de granulartié inférieur.
+    </p>
+    <p>
+      Le fil d'ariane sous l'histogramme permet de revenir rapidemment sur un interval déjà visité précédemment.
+      <figure>
+        <img class="max-width"
+        src="../images/histogram.png"
+        alt="Capture d'écran de l'outil histogramme appliqué à une trace."></img>
+      <figcaption>Capture d'écran de l'outil histogramme appliqué à une trace. L'interval choisi est la <i>semaine</i>, les obsels sont groupé par <i>type d'obsel</i> et le fil d'ariane montre que nous sommes en train de visualiser le mois de novembre 2016.</figcaption>
+    </figure>
+    </p>
+
+    <h3 id="spare"> Spare </h3>
+
+    En travaux...
+
+    <h3 id="timeline"> Timeline </h3>
+
+    <p>
+      L'outils de timeline regroupe plusieurs modules permettant de personnalisé la visualisation d'une trace.
+      On retrouve une <a href="#timeline-timeline">timeline</a>, un <a href="#timeline-stylesheet-editor">éditeur de feuille de style</a>, un <a href="#timeline-rule-editor">éditeur de règle de style</a>, un module pour <a href="#timeline-model-explorer">visualiser un modèle</a> et un module pour <a href="#timeline-obsel-explorer">visualiser le contenu d'un obsel</a>.
+    </p>
+
+    <p id="timeline-timeline">
+      Une <b> timeline </b> est composée de deux parties. La partie haute affiche chaque obsel d'une trace à partir d'un temps de départ jusqu'à un temps d'arrivée. Les obsels sont empilés dans des colonnes qui corresopndent à des intervals divisant la durée totale représentée. La représentation des obsels dépend d'une <b>feuille de style</b> dont l'éditeur est présenté plus bas dans cette notice. <br/>
+      On peut explorer les obsels en les sélectionnant via la souris et en se déplaçant à l'aide des flèches directionnelles du clavier. Les informations concernant l'obsel sélectionné sont affiché via l'outil de visualisation d'obsels présenté plus bas. <br/>
+      Enfin, la partie haute de la timeline permet d'explorer la trace en zommant sur une partie désirée. Pour cela, il suffit de cliquer sur le point de départ de la région à zoomer, et de glisser sur la région à explorer en maintenant le bouton gauche de la souris appuyé.
+      La partie basse de la timeline, quant à elle, va permettre de naviguer temporellement dans la trace. En haut de cette partie, les graduations affichent la date de début d'un interval de la timeline (un colonne d'obsels). On peut naviguer avec cette graduation, en la faisant glisser vers la droite ou la gauche. <br/>
+      <span class="fgWarning">Attention : </span>la timeline garde en mémoire les obsels déjà téléchargés. Cependant, si vous utilisez les graduations pour naviguer vers une zone de la trace que vous n'avez pas encore téléchargé, les temps de chargement vont considérablement ralentir la visualisation. Il vaut mieux, dans ce cas, utiliser la partie présentée ci-dessous, pour charger une partie plus conséquente de la trace.</br>
+      En bas de la partie basse de la timeline, on va trouver des intervals temporels qui va du début du primer obsel de la trace, à la fin du dernier obsel. Pour charger la trace sur certains de ces interval, il suffit de cliquer/déplacer sur les cases des intervals.
+      <figure>
+        <img class="max-width"
+        src="../images/timeline-timeline.png"
+        alt="Capture d'écran de l'outil timeline appliqué à une trace."></img>
+       <figcaption>Capture d'écran de l'outil timeline appliqué à une trace. La trace commence en septembre 2016 et fini en decembre 2016. L'interval des case en base de la timeline est représenté en semaines. La partie en bleu clair représente la partie affichée sur la partie haute de la timeline.</figcaption>
+      </figure>
+    </p>
+
+    <p id="timeline-stylesheet-editor">
+      Un <b>éditeur de feuille de style</b> va permettre d'importer, d'exporter, de modifier et de transformer en règle une feuille de style de timeline.
+      Une feuille de style de timeline est une feuille de style appliquée à une timeline.
+      Elle va permettre de déterminer quel symbole afficher pour des obsels qui respectent certaines règles.
+      Une règle de feuille de style est une disjonction de conjonction de règles atomiques. On va pouvoir écrire par exemple la règle suivante : <br/>
+      Un obsel de type <i>A</i> ayant un attribut <i>a</i> de valeur <i>-10</i> OU un obsel ayant un attribut <i>b</i> de valeur supérieur à <i>5</i>.<br/>
+      Une règle de feuille de style se présente comme affiché sur la figure suivante.
+      <figure style="width:800px">
+        <center>
+          <img class="max-width"
+          src="../images/stylesheet-editor-rules.png"
+          alt="Capture d'écran d'une règle de feuille de style."></img>
+        </center>
+       <figcaption>
+         Capture d'écran d'une règle de feuille de style.</br>
+         Les obsels de type <i>ap</i> et ayant un attribut <i>ap_gain</i> égal à -10 seront représentés par un rond bleu.</br>
+         Les obsels de type <i>buyPower</i> seront représentés par un rond jaune.</br>
+       </figcaption>
+      </figure>
+      <br/>
+      De gauche à droite, sur la figure précédente, les options d'édition des règle de feuille de style :
+      <ul>
+        <li>Visibilité : Affiche ou cache un obsel qui respecte la règle. Cette option peut permettre d'ignorer volontairement certains obsels</li>
+        <li>Copier : Envoie à l'éditeur de règle de feuille de style (voir plus bas) une copie de la règle</li>
+        <li>Éditer : Envoie à l'éditeur de règle de feuille de style la règle sélectionnée.
+          <span class="fgWarning">Attention: </span>Changer l'identifiant de la règle en créera une nouvelle.</li>
+        <li>Supprimer : Supprimer la règle de la feuille de style</li>
+      </ul>
+      <br/>
+      L'<b>éditeur de feuille de style</b> possède aussi plusieurs options à appliquer à l'ensemble de la feuille de style, présenté sur la figure suivante.
+      <figure style="width:400px">
+        <center>
+          <img class="max-width"
+          src="../images/stylesheet-editor-options.png"
+          alt="Capture d'écran des options de l'éditeur de feuille de style."></img>
+        </center>
+       <figcaption>
+         Capture d'écran des options de l'éditeur de feuille de style.
+       </figcaption>
+      </figure>
+      De gauche à droite, sur la figure précédente, les options d'édition d'une feuille de style :
+      <ul>
+        <li>Créer : À DÉVELOPPER</li>
+        <li>Télécharger : Télécharge les feuilles de style enregistrées dans le modèle de la trace. Propose d'en choisir une.</li>
+        <li>Téléverser : Propose de sauvegarder la feuille de style actuelle dans le modèle de la trace.
+          <span class="fgWarning">Attention: </span>Un choisissant un identifiant de feuille de style existant, vous remplacerez la feuille de style du même nom déjà présente.</li>
+        <li>Créer une méthode : Créer une méthode de transformation correspondant à la feuille de style. Voir lien</li>
+        <li>Supprimer : À DÉVELOPPER</li>
+      </ul>
+    </p>
+
+    <p id="timeline-rule-editor">
+      Un <b>éditeur de règle de feuille de style</b> est un outil permettant de définir les règles de la feuille de style en cours d'utilisation.
+      La figure suivante est une capture d'écran de cet outil.
+      <figure style="width:600px">
+        <center>
+          <img class="max-width"
+          src="../images/stylesheet-rule-editor.png"
+          alt="Capture d'un éditeur de règle de feuille de style."></img>
+        </center>
+       <figcaption>
+         Capture d'un éditeur de règle de feuille de style.
+       </figcaption>
+      </figure>
+    </p>
+
+  </body>
+</html>

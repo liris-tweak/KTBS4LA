@@ -1,0 +1,26 @@
+{
+  "name": "ktbs4la",
+  "version": "0.1.0",
+  "description": "Client side application for using ktbs in learning analytics context. Relative to the HUBBLE project.",
+  "main": "",
+  "keywords": [
+    "taaabs",
+    "ktbs",
+    "learning analytics",
+    "HUBBLE"
+  ],
+  "authors": [
+    "Yepikae"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "ktbs-for-la": "TaaabsElements/ktbs-for-la"
+  }
+}
